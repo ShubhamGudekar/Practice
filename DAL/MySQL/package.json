@@ -1,0 +1,23 @@
+{
+  "name": "mysql-connectivity",
+  "version": "1.0.0",
+  "description": "Connection Between ExpressJS and MySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShubhamGudekar/Practice.git"
+  },
+  "author": "Shubham Gudekar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShubhamGudekar"
+  },
+  "homepage": "https://github.com/ShubhamGudekar",
+  "dependencies": {
+    "expressjs": "^1.0.1",
+    "mysql": "^2.18.1"
+  }
+}
