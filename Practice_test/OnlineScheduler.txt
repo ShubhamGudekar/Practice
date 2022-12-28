@@ -1,0 +1,48 @@
+Online Course Scheduler
+
+Abstraction : 
+		Online Course Scheduler portal for
+			Students,
+ 			Trainer,
+			Director,
+			Supervisor 
+Online course schedule view experience using training calendar(Student and trainer)
+Status of ongoing course 
+Status of ongoing batches
+Course catalog maintainace by supervisor
+Batch catalog maintainace by supervisor
+Monitoring Operations by Operation team(Supervisor)
+
+
+Encapsulation : 
+
+Application users will interact with online course schedular using Portal (WebSite).
+Portal User interface invoke Online schedular operations logic from remote web services.
+Web services hosted on Web Server will encapsulate Business Logic of online schedular from web site
+Bussiness Logic will encapsulate Core training calendar, catalog,  logic from
+Web services.
+Business logic will invoke business data from database in form of result sets after query processing by 
+database.
+Database will perform DML, SQL , Stored Procedure Execution at Database server level and hide interal implementation.
+
+Polmorphsim & Inheritance:
+
+Business Objects will be defined using Class Hiearchy User, Student, Director, Trainer, Supervisor
+
+Catalog,Course Catalog,Batch Catalog,Courses,Batches  etc.
+
+Modularity:
+	Course Catalog 
+	Batch Catalog 
+	Customer Relations Management (CRM)
+	Training Calendar Management
+	Authentication
+	Authorization
+	Business Intelligence
+
+Concurrency:
+       all online schedular business Operations are under execution parallely
+	for users with role student, trainer, supervisior, director
+
+Persistence:
+	All business data will be stored  in Data Store for future work	
