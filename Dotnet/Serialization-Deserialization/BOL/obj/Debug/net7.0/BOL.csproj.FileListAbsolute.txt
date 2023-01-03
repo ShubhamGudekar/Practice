@@ -1,0 +1,12 @@
+D:\CDAC\Serialization-Deserialization\BOL\bin\Debug\net7.0\BOL.deps.json
+D:\CDAC\Serialization-Deserialization\BOL\bin\Debug\net7.0\BOL.dll
+D:\CDAC\Serialization-Deserialization\BOL\bin\Debug\net7.0\BOL.pdb
+D:\CDAC\Serialization-Deserialization\BOL\obj\Debug\net7.0\BOL.csproj.AssemblyReference.cache
+D:\CDAC\Serialization-Deserialization\BOL\obj\Debug\net7.0\BOL.GeneratedMSBuildEditorConfig.editorconfig
+D:\CDAC\Serialization-Deserialization\BOL\obj\Debug\net7.0\BOL.AssemblyInfoInputs.cache
+D:\CDAC\Serialization-Deserialization\BOL\obj\Debug\net7.0\BOL.AssemblyInfo.cs
+D:\CDAC\Serialization-Deserialization\BOL\obj\Debug\net7.0\BOL.csproj.CoreCompileInputs.cache
+D:\CDAC\Serialization-Deserialization\BOL\obj\Debug\net7.0\BOL.dll
+D:\CDAC\Serialization-Deserialization\BOL\obj\Debug\net7.0\refint\BOL.dll
+D:\CDAC\Serialization-Deserialization\BOL\obj\Debug\net7.0\BOL.pdb
+D:\CDAC\Serialization-Deserialization\BOL\obj\Debug\net7.0\ref\BOL.dll

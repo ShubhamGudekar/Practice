@@ -1,0 +1,15 @@
+D:\CDAC\Serialization-Deserialization\utils\bin\Debug\net7.0\utils.deps.json
+D:\CDAC\Serialization-Deserialization\utils\bin\Debug\net7.0\utils.dll
+D:\CDAC\Serialization-Deserialization\utils\bin\Debug\net7.0\utils.pdb
+D:\CDAC\Serialization-Deserialization\utils\bin\Debug\net7.0\BOL.dll
+D:\CDAC\Serialization-Deserialization\utils\bin\Debug\net7.0\BOL.pdb
+D:\CDAC\Serialization-Deserialization\utils\obj\Debug\net7.0\utils.csproj.AssemblyReference.cache
+D:\CDAC\Serialization-Deserialization\utils\obj\Debug\net7.0\utils.GeneratedMSBuildEditorConfig.editorconfig
+D:\CDAC\Serialization-Deserialization\utils\obj\Debug\net7.0\utils.AssemblyInfoInputs.cache
+D:\CDAC\Serialization-Deserialization\utils\obj\Debug\net7.0\utils.AssemblyInfo.cs
+D:\CDAC\Serialization-Deserialization\utils\obj\Debug\net7.0\utils.csproj.CoreCompileInputs.cache
+D:\CDAC\Serialization-Deserialization\utils\obj\Debug\net7.0\utils.csproj.CopyComplete
+D:\CDAC\Serialization-Deserialization\utils\obj\Debug\net7.0\utils.dll
+D:\CDAC\Serialization-Deserialization\utils\obj\Debug\net7.0\refint\utils.dll
+D:\CDAC\Serialization-Deserialization\utils\obj\Debug\net7.0\utils.pdb
+D:\CDAC\Serialization-Deserialization\utils\obj\Debug\net7.0\ref\utils.dll
