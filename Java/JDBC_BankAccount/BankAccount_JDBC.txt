@@ -1,0 +1,71 @@
+create table BankAccount(
+accNo int primary key auto_increment,
+name varchar(20),
+email varchar(25),
+balance double default 0,
+accType varchar(10),
+accOpenDate date default (curdate()));
+
+alter table BankAccount auto_increment=1000;
+
+delimiter $$
+create procedure insertAccount(in pname varchar(20),in pemail varchar(20),in pbalance double,in paccType varchar(10))
+BEGIN
+insert into BankAccount values(default,pname,pemail,pbalance,paccType,default);
+END $$
+delimiter ;
+
+delimiter $$
+create procedure deleteAccount(in paccNo int)
+BEGIN
+delete from BankAccount
+where accNo=paccNo;
+END $$
+delimiter ;
+
+delimiter $$
+create procedure withdrawAmount(in paccNo int,in pamount double,out pbalance double)
+BEGIN
+select balance into pbalance
+from BankAccount
+where accNo=paccNo;
+if pamount>pBalance
+	then SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Insufficent Funds Transaction Declined';	
+else
+	set pbalance=pbalance-pamount;
+	update BankAccount
+	set balance=pbalance
+	where accNo=paccNo;
+end if;
+END $$
+delimiter ;
+
+delimiter $$
+create procedure depositAmount(in paccNo int,in pamount double,out pbalance double)
+BEGIN
+select balance into pbalance
+from BankAccount
+where accNo=paccNo;
+set pbalance=pbalance+pamount;
+update BankAccount
+set balance=pbalance
+where accNo=paccNo;
+END $$
+delimiter ;
+
+delimiter $$
+create procedure getBalance(in paccNo int,out pbalance double)
+BEGIN
+select balance into pbalance
+from BankAccount
+where accNo=paccNo;
+END $$
+delimiter ;
+
+delimiter $$
+create procedure displayData()
+BEGIN
+select accNo,name,email,balance,accType,date_format(accOpenDate,'%d-%m-%Y')
+from BankAccount;
+END $$
+delimiter ;
