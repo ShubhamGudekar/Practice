@@ -44,7 +44,6 @@ public class StudentUtils
                 break;
             case 4:
                 Console.WriteLine("Enter New MobileNo ");
-
                 tStudent.MobileNo = long.Parse(Console.ReadLine());
                 Console.WriteLine("MobileNo Updated Successfully\n" + tStudent);
                 break;
