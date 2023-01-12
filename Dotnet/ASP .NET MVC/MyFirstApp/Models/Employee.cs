@@ -19,7 +19,7 @@ public class Employee
 
     public override bool Equals(object? obj)
     {
-        if (obj is Employee)
+        if (obj is Employee && obj != null)
         {
             return this.Email.Equals(((Employee)obj).Email) && this.Password.Equals(((Employee)obj).Password);
         }
