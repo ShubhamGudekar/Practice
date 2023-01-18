@@ -9,6 +9,7 @@ public class BackAccountTester {
 		try (Scanner sc = new Scanner(System.in)) {
 			boolean exitFlag = false;
 			double tempBal = 0;
+			char ch='n';
 			while (!exitFlag) {
 				try {
 					System.out.println("select option from below - ");
@@ -56,16 +57,18 @@ public class BackAccountTester {
 						System.out.println("Enter Acctno. Amount - ");
 						tempBal = withdrawBalance(sc.nextInt(), sc.nextDouble());
 						System.out.println("Enter Y to display Balance or N to continue");
-						if (sc.next().charAt(0) == 'Y' || sc.next().charAt(0) == 'y')
-							System.out.println("Balance" + tempBal);
+						ch=sc.next().charAt(0);
+						if (ch == 'Y' || ch == 'y')
+							System.out.println("Balance : " + tempBal);
 						break;
 
 					case 6:
 						System.out.println("Enter Acctno. Amount - ");
 						tempBal = depositBalance(sc.nextInt(), sc.nextDouble());
 						System.out.println("Enter Y to display Balance or N to continue");
-						if (sc.next().charAt(0) == 'Y' || sc.next().charAt(0) == 'y')
-							System.out.println("Balance" + tempBal);
+						ch=sc.next().charAt(0);
+						if (ch == 'Y' || ch == 'y')
+							System.out.println("Balance : " + tempBal);
 						break;
 
 					case 7:
@@ -75,7 +78,7 @@ public class BackAccountTester {
 
 					case 8:
 						System.out.println("Thank you!");
-						exitFlag = false;
+						exitFlag = true;
 						break;
 
 					}

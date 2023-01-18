@@ -17,7 +17,7 @@ public class DbUtils {
 
 	static {
 		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_bankaccount", "root", "root123");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BankApplication", "root", "root123");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -39,7 +39,8 @@ public class DbUtils {
 	}
 
 	public static boolean findAccount(int accNo) throws SQLException, BankAccountException {
-		PreparedStatement ps = con.prepareStatement("SELECT * FROM BankAccount where acctNo=?");
+		PreparedStatement ps = con.prepareStatement("SELECT * FROM BankAccount where accNo=?");
+		ps.setInt(1, accNo);
 		ResultSet rs = ps.executeQuery();
 		while (rs.next()) {
 			if (accNo == rs.getInt(1))
