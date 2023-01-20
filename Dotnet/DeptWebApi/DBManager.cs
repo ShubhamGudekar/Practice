@@ -15,8 +15,9 @@ public class DBManager : IDBManager
     {
         using (var context = new CollectionContext())
         {
-            var departments = from dept in context.Departments select dept;
-            return departments.ToList<Department>();
+            // var departments = from dept in context.Departments select dept;
+            // return departments.ToList<Department>();
+            return context.Departments.Select(dept => dept).ToList();
         }
     }
 

@@ -15,7 +15,7 @@
 </Project>
 
 <!-- 
-  Packages -- 
-  1) dotnet add package mysql.entityframeworkcore --version 6.04
+  Packages
+  1) dotnet add package mysql.entityframeworkcore version 6.04
   2) dotnet add package mysql.entityframeworkcore
  -->

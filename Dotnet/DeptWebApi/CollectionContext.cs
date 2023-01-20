@@ -12,17 +12,17 @@ public class CollectionContext : DbContext
 
     }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<Department>(entity =>
-        {
-            entity.HasKey(e => e.Id);
-            entity.Property(e => e.Name).IsRequired();
-            entity.Property(e => e.Location).IsRequired();
-        });
-        modelBuilder.Entity<Department>().ToTable("departments");
+    // protected override void OnModelCreating(ModelBuilder modelBuilder)
+    // {
+    //     base.OnModelCreating(modelBuilder);
+    //     modelBuilder.Entity<Department>(entity =>
+    //     {
+    //         entity.HasKey(e => e.Id);
+    //         entity.Property(e => e.Name).IsRequired();
+    //         entity.Property(e => e.Location).IsRequired();
+    //     });
+    //     modelBuilder.Entity<Department>().ToTable("departments");
 
-    }
+    // }
 }
 
