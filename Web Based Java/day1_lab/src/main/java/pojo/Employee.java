@@ -38,6 +38,26 @@ public class Employee {
 		this.dob = dob;
 		this.isPermanent = isPermanent;
 	}
+	
+	
+
+	public Employee(Long id, String firstName, String lastName, double salary) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.salary = salary;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", dept=" + dept
+				+ ", salary=" + salary + ", dob=" + dob + ", isPermanent=" + isPermanent + "]";
+	}
+
+
 
 	public Employee() {
 
