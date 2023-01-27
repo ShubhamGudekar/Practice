@@ -1,0 +1,25 @@
+Day 5
+1. Copy  "day5-data\day5_help\spring-help\template project for spring\test_spring" project in your workspace folder
+
+2. import this project as Existing Maven Project --Force update Maven project
+This should download the dependencies , for spring
+
+3. In the meantime , copy earlier hibernate project in day5.1_lab
+(Keep this diagram open :  "day4-data\day4_help\Alternate Student management system E-R diagram.png")
+Solve 
+3.1 Launch new course
+i/p : all course i/ps (title , start date ,end date , fees ,capacity)
+o/p : status message (success or failure)\
+
+
+3.2 Student application for the course
+i/p : course id n student details : name n email
+What should in DB : student record inserted in students table
+child rec added in admissions table : 
+with id : auto generated 
+applied date set as current date ,
+result date : not yet set,
+course id n student id : FKs assigned properly
+status : APPLIED
+
+4. After spring dependencies are downloaded , revise basic spring bean life cycle , along with setter based D.I
