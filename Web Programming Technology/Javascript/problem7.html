@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimum Number</title>
+    <script>
+        var i = 0;
+        function addEntry() {
+            var entry = `<tr>
+                <td>Add ${i} number</td>
+                <td><input type='text' name='num' id='${i}'></td>
+                </tr>`;
+            i++;
+            document.getElementById("tab").innerHTML += entry;
+        }
+
+        function min() {
+            var nums = document.getElementsByName("num");
+
+            // var min = nums.reduce((n1,n2) => n1 > n2 ? n2 : n1);
+            // document.getElementById("mdiv").innerHTML = `Minumum Number : ${min}`;
+
+            var min = parseInt(nums[0].value);
+            for (j = 1; j < nums.length; j++) {
+                if (min > parseInt(nums[j].value))
+                    min = parseInt(nums[j].value);
+            }
+            document.getElementById("mdiv").innerHTML += `<br/>Min : ${min}`;
+
+        }
+    </script>
+</head>
+
+<body>
+    <div><button type="button" id="button" onclick="addEntry()">add Number</button>
+        <!-- <button id="button" onclick="removeEntry()">Remove Last Number</button> -->
+        <button id="button" onclick="min()">Find Min</button>
+    </div><br />
+    <table id="tab" style="float: left;">
+
+    </table>
+    <div id="mdiv"></div>
+</body>
+
+</html>

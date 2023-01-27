@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Empolyee</title>
+    <script>
+
+        emp = function (empno, ename, sal) {
+            this.empno = empno;
+            this.ename = ename;
+            this.sal = sal;
+        }
+
+        displayEmp = () => {
+            empdata = [(new emp(1000, "shubh", 1000)), (new emp(1001, "sagar", 1100)), (new emp(1002, "aam", 1200)), (new emp(1003, "ray", 1300))];
+            document.write(`Empno&nbsp&nbspName&nbsp&nbspSalary<br>`);
+            for (e of empdata) {
+                document.write(`${e.empno}&nbsp&nbsp&nbsp${e.ename}&nbsp&nbsp&nbsp${e.sal}<br>`);
+            }
+        }
+
+
+
+    </script>
+</head>
+
+<body onload="displayEmp()">
+
+</body>
+
+</html>

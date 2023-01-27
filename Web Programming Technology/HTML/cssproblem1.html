@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            position: relative;
+            background-color: black;
+            color: white;
+        }
+
+        fieldset {
+            border: 2px solid blue;
+            border-radius: 15px;
+        }
+
+        #maindiv {
+            padding-left: 25%;
+            position: absolute;
+            padding-top: 8%;
+        }
+
+        legend {
+            background-color: blue;
+            border-radius: 10px;
+        }
+
+        table td:first-child {
+            width: 150px;
+            text-align: right;
+            padding-right: 2%;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+    <script>
+        function showPass() {
+            if (showPassword.checked == true) {
+                document.getElementById("psswd").setAttribute("type", "text");
+            }
+            else {
+                document.getElementById("psswd").setAttribute("type", "password");
+            }
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+    <div id="maindiv">
+        <fieldset style="width: fit-content;">
+            <legend>Name and Address</legend>
+            <form>
+                <table>
+                    <tr>
+                        <td><label for="ssn">SSN : </label></td>
+                        <td><input type="text" id="ssn" name="ssn" autofocus> <button type="button" id="btn1">Fill in
+                                Name and
+                                address</button></td>
+                    </tr>
+                    <tr>
+                        <td><label for="fn">Fullname : </label></td>
+                        <td><input type="text" id="fn" name="fn"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sandn">Street and Number : </label></td>
+                        <td><input type="text" id="sandn" name="sandn"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="post">Postal Code : </label></td>
+                        <td><input type="text" id="post" name="post"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="city">City : </label></td>
+                        <td><input type="text" id="city" name="city"></td>
+                    </tr>
+                </table>
+            </form>
+        </fieldset>
+        <br />
+        <fieldset style="width: fit-content;">
+            <legend>Username and Password</legend>
+            <form>
+                <table>
+                    <tr>
+                        <td><label for="uname">Username :</label></td>
+                        <td><input type="text" id="uname" name="uname"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="psswd">Password :</label></td>
+                        <td><input type="password" id="psswd" name="psswd"></td>
+                    </tr>
+                </table>
+                <input type="checkbox" name="showPasswordCB" id="showPassword" onchange="showPass()"
+                    style="margin-left: 50%;"><label for="showPassword">Show Password</label>
+            </form>
+        </fieldset>
+        <br>
+        <button type="submit" id="btn2" style="margin-left: 8%;">Register</button>
+    </div>
+</body>
+
+</html>

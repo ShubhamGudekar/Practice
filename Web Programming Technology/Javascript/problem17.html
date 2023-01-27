@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle</title>
+    <script src="bootstrap-4.6.2-dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                let r = parseFloat($('#radius'));
+                if (isNaN(r)) {
+                    $('#disp').html = `Enter Valid Radius`;
+                    return;
+                }
+                $('#disp').html = `<td>Area<br>Circumference</td>
+                                    <td>${r*Math.PI*Math.PI}<br/>${2*r*Math.PI}</td>`
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <table style="margin: auto;border: 2px solid rgb(60, 60, 130);">
+        <tr>
+            <td><label for id="radius">Enter Radius</label><input type="text" id="radius" name="radius"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"> <button type="button" id="btn" name="btn">Display</button></td>
+        </tr>
+        <tr id="disp"></tr>
+
+    </table>
+</body>
+
+</html>

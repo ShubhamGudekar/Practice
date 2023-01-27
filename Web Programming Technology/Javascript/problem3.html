@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Numbers</title>
+    <script>
+        function displayEven() {
+            var num = parseInt(document.getElementById("num").value);
+            var divRef = document.getElementById("mdiv");
+            if(!isNaN(num)){
+            divRef.innerHTML = `Even Numbers till ${num} are : `;
+            var i = 2;
+            while(i<=num){
+                if(i%2==0)
+                    divRef.innerHTML +=i+" ";
+                    i++;
+            }
+            document.getElementById("num").value = "";
+            document.getElementById("num").focus();
+        }
+        else
+            divRef.innerHTML = "Please Enter a valid Number";
+        }
+    </script>
+</head>
+<body>
+    <h2>Enter number</h2>
+    <form>
+        <table>
+            <tr>
+                <td>Enter Number: </td>
+                <td><input type="number" id="num" name="num"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><button type="button" onclick="displayEven()" id="btn"
+                        name="btn">Print</button></td>
+            </tr>
+        </table>
+    </form>
+    <div id="mdiv"></div>
+</body>
+</html>

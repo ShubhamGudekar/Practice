@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <script>
+        function printText() {
+            var txt = document.getElementById("txt").value;
+            var num = parseInt(document.getElementById("num").value);
+            var divRef = document.getElementById("mdiv");
+            if (!isNaN(num)) {
+                divRef.innerHTML = "";
+                for (i = 1; i <= num; i++) {
+                    divRef.innerHTML += `${txt} <br>`;
+                }
+                document.getElementById("txt").value = "";
+                document.getElementById("num").value = "";
+                document.getElementById("txt").focus();
+            }
+            else
+                divRef.innerHTML = "Please Enter a valid Number";
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Enter message and number</h2>
+    <form>
+        <table>
+            <tr>
+                <td>Enter String : </td>
+                <td><input type="text" id="txt" name="txt"></td>
+            </tr>
+            <tr>
+                <td>Enter Number : </td>
+                <td><input type="number" id="num" name="num" min="1"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><button type="button" onclick="printText()" id="btn"
+                        name="btn">Print</button></td>
+            </tr>
+        </table>
+    </form>
+    <div id="mdiv"></div>
+</body>
+
+</html>

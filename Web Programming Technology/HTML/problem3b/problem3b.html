@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #title {
+            text-align: initial;
+            font-size: 60px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgb(40, 145, 153)
+        }
+
+        #dome {
+            height: 7%;
+            width: 7%;
+        }
+
+        .topnav{
+            column-span: 10;
+            height: 30px;
+            width: 100%;
+            background-color: cadetblue;
+            color: aliceblue;
+            text-align: center;
+            font-size: x-large;
+            border: 0px;
+        }
+
+        .scheduletable,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-size: 100%;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 0.3%;
+            padding-bottom: 0.3%;
+        }
+
+        .scheduletable {
+            width: 100%;
+        }
+
+        #bottominfo2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 0px;
+        }
+
+        .fcontainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+        }
+
+        .fchild1 {
+            text-align: left;
+            font-size: 120%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 40%;
+        }
+
+        .fchild2 {
+            margin-left: 10%;
+            width: 35%;
+            padding: 0.5% 0% 0.5% 1%;
+            text-align: right;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 3px solid rgb(179, 95, 179);
+            box-shadow: 5px 5px gray;
+            border-radius: 10px;
+            font-size: 110%;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: rgb(40, 145, 153);
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 0.2% 0% 0.2% 0%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title">
+        <img id="dome" src="./dome.png" float="left">Hamilton<br>Conference Center
+    </div>
+    <table class="topnav">
+        <tr>
+            <td>HomePage</td>
+            <td>Reservations</td>
+            <td>Virtualtour</td>
+            <td>Staff</td>
+            <td>Calenderofevents</td>
+            <td>Contactinfo</td>
+            <td>Directions</td>
+            <td>FAQ</td>
+        </tr>
+    </table>
+
+    <div style="color: black;text-align: right;font-size: 105%; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        <p>Reservations for Conference room<br>Tuesday, April 11</p>
+    </div>
+    <table class="scheduletable" style="vertical-align: top;text-align: left;">
+        <tr style="background-color: rgb(40, 145, 153);color: white;">
+            <th></th>
+            <th colspan="8">Morning</th>
+            <th colspan="2">Noon</th>
+            <th colspan="8">Afternoon</th>
+        </tr>
+        <tr style="background-color: rgb(40, 145, 153);color: white;">
+            <th>Room</th>
+            <th>8:00</th>
+            <th>8:30</th>
+            <th>9:00</th>
+            <th>9:30</th>
+            <th>10:00</th>
+            <th>10:30</th>
+            <th>11:00</th>
+            <th>11:30</th>
+            <th>12:00</th>
+            <th>12:30</th>
+            <th>1:00</th>
+            <th>1:30</td>
+            <th>2:00</th>
+            <th>2:30</td>
+            <th>3:00</th>
+            <th>3:30</th>
+            <th>4:00</th>
+            <th>4:30</th>
+        </tr>
+        <tr>
+            <td>Sunrise<br>Room</td>
+            <td colspan="4">Marriage Encounter</td>
+            <td colspan="4"></td>
+            <td colspan="2">Marriage<br>Encounter<br>Luncheon</td>
+            <td colspan="4"></td>
+            <td colspan="4">Marriage Encounter Talks</td>
+        </tr>
+        <tr>
+            <td>Mountain<br>View Room</td>
+            <td colspan="2">BreakFast Club<br>for Ohio</td>
+            <td colspan="4"></td>
+            <td colspan="4">Ohio Conference of Librarians</td>
+            <td colspan="2"></td>
+            <td colspan="6">Ohio Book Resale Setup</td>
+        </tr>
+        <tr>
+            <td>Arbor Hall</td>
+            <td colspan="8">Computer Expo Set Up</td>
+            <td colspan="2"></td>
+            <td colspan="8">Computer Expo Opening Session</td>
+        </tr>
+        <tr>
+            <td>Mitchell<br>Theatre</td>
+            <td colspan="14"></td>
+            <td colspan="4">Youth Theatre</td>
+        </tr>
+        <tr>
+            <td>Gold Room</td>
+            <td colspan="2"></td>
+            <td colspan="3">The Tompskins Group</td>
+            <td colspan="3">Pearson Planning</td>
+            <td colspan="4"></td>
+            <td colspan="3">Mothers of Multiples</td>
+            <td colspan="3">Teen Connection</td>
+        </tr>
+        <tr>
+            <td>Blue Room</td>
+            <td colspan="2"></td>
+            <td colspan="3">Retirement Planning</td>
+            <td colspan="3">The Senior Group</td>
+            <td colspan="2">Senior<br>Luncheon</td>
+            <td colspan="5">Senior Classes</td>
+            <td colspan="3">Tutoring</td>
+        </tr>
+        <tr>
+            <td>Green<br>Room</td>
+            <td colspan="2"></td>
+            <td colspan="4">Drivers' Ed</td>
+            <td colspan="5">Movie Club</td>
+            <td colspan="4"></td>
+            <td colspan="3">Tutoring</td>
+        </tr>
+
+    </table>
+    <br>
+    <div class="fcontainer">
+        <div class="fchild1">
+            <p>To reserve a room, please contact Yancy Inwe at extension
+                388 or by e-mail at <a href="mailto:yancyinwe@hconfcenter.org">yancyinwe@hconfcenter.org</a>
+                Reservations should be made at least 48 hours in advance. Cancellations require 24 hour
+                notice. Room deposits will not be returned for cancellations within 24 hours of the scheduled
+                event.</p>
+        </div>
+        <div class="fchild2">
+            <table>
+                <tr>
+                    <td id="bottominfo2">Sunrise Room</td>
+                    <td id="bottominfo2">Maximum Capacity: 80</td>
+                </tr>
+                <tr id="bottominfo2">
+                    <td id="bottominfo2">Mountain View Room</td>
+                    <td id="bottominfo2">Maximum Capacity: 150</td>
+                </tr>
+                <tr id="bottominfo2">
+                    <td id="bottominfo2">Arbor Hall</td>
+                    <td id="bottominfo2">Maximum Capacity: 190</td>
+                </tr>
+                <tr id="bottominfo2">
+                    <td id="bottominfo2">Mitchell Theatre</td>
+                    <td id="bottominfo2">Maximum Capacity: 120</td>
+                </tr>
+                <tr id="bottominfo2">
+                    <td id="bottominfo2">Gold Room</td>
+                    <td id="bottominfo2">Maximum Capacity: 40</td>
+                </tr>
+                <tr id="bottominfo2">
+                    <td id="bottominfo2">Blue Room</td>
+                    <td id="bottominfo2">Maximum Capacity: 30</td>
+                </tr>
+                <tr id="bottominfo2">
+                    <td id="bottominfo2">Green Room</td>
+                    <td id="bottominfo2">Maximum Capacity: 55</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <div class="footer">
+        HAMILTON CONFERENCE CENTER . 8711 WEST PARK LANE . HAMILTON, OH 45011 . (513) 555-7911
+    </div>
+</body>
+
+</html>

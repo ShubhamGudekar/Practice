@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Of Empolyee</title>
+    <script src="bootstrap-4.6.2-dist/jquery.js"></script>
+    <script>
+        let i = 0;
+        let empData = [];
+        $(document).ready(function () {
+            $('#empName').click(function () {
+                i++;
+                $('addEmp').show();
+                $('#tab').append(
+                    `<tr>
+                    <td>${i} Emp Name : </td>
+                    <td><input type='text' id='${i}' name='emp'></td>
+                    </tr>`)
+            })
+
+            // $('addEmp').click(function(){
+            //     $('#emp').each(index=>empData.push(this.val()));
+            // })
+
+            addDetails = () => {
+                empData = [];
+                emparr = document.getElementsByName("emp")
+                for (e of emparr) {
+                    empData.push(e.value)
+                }
+            }
+
+            $('#sortEmp').click(function () {
+                addDetails();
+                empData.sort((a, b) => (a > b) ? 1 : ((b > a) ? -1 : 0))
+                str = `<p> Sorted [ `
+                for (e of empData) {
+                    str += `${e} `;
+                }
+                str += `]</p> `;
+                $('#mdiv').append(str);
+            })
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <form>
+        <table style="margin: auto;" id="tab">
+            <tr style="text-align: center;">
+                <td colspan="2"><button type="button" id="empName" name="empName">Enter Emp Name</button>
+                    <button type="button" id="sortEmp" name="sortEmp">Sort Emp</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="mdiv" style="padding-left: 40%;"></div>
+</body>
+
+</html>

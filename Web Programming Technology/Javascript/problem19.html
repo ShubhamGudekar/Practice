@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number</title>
+    <script src="bootstrap-4.6.2-dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                var num = parseInt($('#num').val());
+                if (isNaN(num)) {
+                    $('#dispArea').html(`<td colspan="2" style="text-align: center;">
+                        Please Enter Valid Number</td>`)
+                    return;
+                }
+                if (num < 0 || num > 1000) {
+                    $('#dispArea').html(`<td colspan="2" style="text-align: center;">
+                        Entered number is out of Range</td>`)
+                    return;
+                }
+                var temp = num;
+                var sum = 0;
+                var r = 0;
+                while (temp > 0) {
+                    r = temp % 10;
+                    sum += r;
+                    temp = parseInt(temp / 10);
+                }
+                $('#dispArea').html(`<td colspan="2" style="text-align: center;">
+                    Sum of Digits of ${num} is ${sum}</td>`)
+                $('#num').focus();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <form>
+        <table style="margin: auto; border: 2px solid black;">
+            <tr>
+                <td colspan="2" style="text-align: center;">Number Checking</td>
+            </tr>
+            <tr>
+                <td>Enter Number a Positive Number Less than 1000 :&nbsp; </td>
+                <td><input type="text" id="num" name="num"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><button type="button" id="btn" name="btn">Check</button>
+                </td>
+            </tr>
+            <tr id="dispArea" style="text-align: center;"></tr>
+        </table>
+    </form>
+</body>
+
+</html>

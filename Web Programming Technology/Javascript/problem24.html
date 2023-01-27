@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="bootstrap-4.6.2-dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#login').click(function () {
+                var ps = ($('#password').val()).trim();
+                var psreg = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+                var username = ($('#username').val()).trim();
+                var unreg = /^[A-Za-z]+$/;
+                if (username.length < 6 || (username.length) >= 10 || (!unreg.test(username))) {
+                    alert("Please Enter Valid Username");
+                    return;
+                }
+                if (!psreg.test(ps) || (ps.length) < 8) {
+                    alert("Please Enter Valid Password");
+                    return
+                }
+                alert("Login Successfull");
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <table style="margin: auto;border: 2px solid black;">
+            <tr>
+                <td colspan="2" style="text-align: center;"><b>Login</b></td>
+            </tr>
+            <tr>
+                <td>Username :&nbsp;</td>
+                <td><input type="text" id="username" name="username" required minlength="6" maxlength="10"></td>
+            </tr>
+            <tr>
+                <td>Password :&nbsp;</td>
+                <!-- <td><input type="text" id="password" name="password" required pattern='/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/'></td> -->
+                <td><input type="password" id="password" name="password" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><button type="button" id="login">Login</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

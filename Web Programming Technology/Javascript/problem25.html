@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <script src="bootstrap-4.6.2-dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                var oId = parseInt($('#oId').val());
+                if (isNaN(oId)) {
+                    alert("Invalid Order Id")
+                    return;
+                }
+                var oName = $('#oName').val();
+                var oBDate = new Date($('#oBDate').val());
+                if (isNaN(oBDate)) {
+                    alert("Invalid Billing Date")
+                    return;
+                }
+                var oSDate = new Date($('#oSDate').val());
+                if (isNaN(oSDate)) {
+                    alert("Invalid Shipping Date")
+                    return;
+                }
+                var oPrice = parseInt($('#oPrice').val());
+                if (isNaN(oPrice)) {
+                    alert("Invalid Price")
+                    return;
+                }
+
+                $('#nameerr').html(``);
+                $('#bdateerr').html(``);
+
+
+                if (oName.length < 6) {
+                    $('#nameerr').html(`Customer Name Cannot be Less than 6 Characters`);
+                    return;
+                }
+
+                if (oBDate > oSDate) {
+                    $('#bdateerr').html(`Billing date Cannot be Greator than Shipping Date`);
+                    return;
+                }
+
+                var orderObj = { orderId: oId, orderName: oName, orderBillDate: oBDate, orderShipDate: oSDate, orderPrice: oPrice };
+                newwidow = window.open();
+                newwidow.document.write(`<p>Order ID : ${orderObj.orderId}<br>
+                    Customer Name : ${orderObj.orderName}<br>Billing Date : ${orderObj.orderBillDate.toDateString()}
+                    <br>Shipping Date : ${orderObj.orderShipDate.toDateString()}<br>
+                    Order Total : ${orderObj.orderPrice}</p>`);
+            })
+        })
+    </script>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <p>Order ID : <input type="text" id="oId" required></p>
+        <p>Customer Name : <input type="text" id="oName" required>&nbsp;<span id="nameerr"></span></p>
+        <p>Enter Billing Date : <input type="date" id="oBDate" required>&nbsp;<span id="bdateerr"></span></p>
+        <p>Enter Shipping Date : <input type="date" id="oSDate" required></p>
+        <p>Order Total : <input type="text" id="oPrice" required></p>
+        <p><button type="button" id="btn" name="btn">Display</button></p>
+    </form>
+</body>
+
+</html>

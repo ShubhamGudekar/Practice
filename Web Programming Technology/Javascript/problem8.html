@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Calculator</title>
+    <script>
+        function power() {
+            base = parseInt(document.getElementById("base").value);
+            pow = parseInt(document.getElementById("pow").value);
+            divRef = document.getElementById("mdiv");
+            if (isNaN(base) || isNaN(pow)) {
+                divRef.innerHTML = `Please Enter Valid Number`;
+                return;
+            }
+            var mul = 1;
+            if (pow > 0) {
+                while (pow > 0) {
+                    mul = mul * base;
+                    pow--;
+                }
+                divRef.innerHTML = `ans = ${mul}`;
+            }
+            else if (pow < 0) {
+                while (pow < 0) {
+                    mul = mul / base;
+                    pow++;
+                }
+                divRef.innerHTML = `ans = ${mul}`;
+            }
+            else
+                divRef.innerHTML = `ans = ${mul}`;
+        }
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Enter Number : </td>
+            <td><input type="number" name="base" id="base" required></td>
+        </tr>
+        <tr>
+            <td>Enter Power : </td>
+            <td><input type="number" name="pow" id="pow" required></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><button type="button" name="btn" id="btn"
+                    onclick="power()">Calculate Power</button></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;" id="mdiv"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

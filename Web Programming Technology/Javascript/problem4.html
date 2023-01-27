@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Operations</title>
+
+    <script>
+        function calc() {
+            var n1 = parseInt(document.getElementById("n1").value);
+            var n2 = parseInt(document.getElementById("n2").value);
+            var op = document.getElementById("op").value;
+            var divRef = document.getElementById("mdiv");
+            if (isNaN(n1) || isNaN(n2)) {
+                divRef.innerHTML = "Please Enter a valid Number";
+                return;
+            }
+            switch (op) {
+                case '*':
+                    divRef.innerHTML = `${n1} * ${n2} = ${n1 * n2}`;
+                    break;
+
+                case '-':
+                    divRef.innerHTML = `${n1} - ${n2} = ${n1 - n2}`;
+                    break;
+
+                case '+':
+                    divRef.innerHTML = `${n1} + ${n2} = ${n1 + n2}`;
+                    break;
+
+                case '/':
+                    divRef.innerHTML = `${n1} / ${n2} = ${n1 / n2}`;
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Enter number</h2>
+    <form>
+        <table>
+            <tr>
+                <td>First Number: </td>
+                <td><input type="number" id="n1" name="n1"></td>
+            </tr>
+            <tr>
+                <td>Second Number: </td>
+                <td><input type="number" id="n2" name="n2"></td>
+            </tr>
+            <tr>
+                <td>Operator </td>
+                <td><input type="text" id="op" name="op" pattern="[+*/-]"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><button type="button" onclick="calc()" id="btn"
+                        name="btn">Print</button></td>
+            </tr>
+        </table>
+    </form>
+    <div id="mdiv"></div>
+</body>
+
+</html>

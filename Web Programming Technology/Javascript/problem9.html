@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator</title>
+    <script>
+
+        function findCI() {
+            var principal = parseInt(document.getElementById("principal").value);
+            var rate = parseFloat(document.getElementById("rate").value);
+            var time = parseFloat(document.getElementById("time").value);
+            var compounded = parseInt(document.getElementById("compounded").value);
+            var divRef = document.getElementById("mdiv");
+            var amount = parseInt(principal);
+            if (isNaN(principal) || isNaN(rate) || isNaN(time) || isNaN(compounded)) {
+                divRef.innerHTML = `Please Enter Valid Detials`
+                return;
+            }
+            mulFactor = (1 + (rate / (compounded * 100)));
+            durattion = time * compounded
+            mulFactor = Math.pow(mulFactor, durattion);
+            amount = parseFloat(amount * mulFactor).toFixed(2);
+            divRef.innerHTML = `Compound Interest : ${amount - principal}`;
+        }
+    </script>
+</head>
+
+<body>
+    <table style="margin: auto;">
+        <tr>
+            <td colspan="2"><h2>Compound Interest Calculator</h2></td>
+        </tr>
+        <tr>
+            <td>Enter Principal : </td>
+            <td><input type="number" name="principal" id="principal" required></td>
+        </tr>
+        <tr>
+            <td>Enter Rate : </td>
+            <td><input type="number" name="Rate" id="rate" required></td>
+        </tr>
+        <tr>
+            <td>Enter Time: </td>
+            <td><input type="number" name="time" id="time" required></td>
+        </tr>
+        <tr>
+            <td>Compounded : </td>
+            <td><select id="compounded" required>
+                    <option value="1" selected>Annually</option>
+                    <option value="2">Semi-Annually</option>
+                    <option value="4">Quaterly</option>
+                    <option value="12">Monthly</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><button type="button" name="btn" id="btn"
+                    onclick="findCI()">Calculate CI</button></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;" id="mdiv"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

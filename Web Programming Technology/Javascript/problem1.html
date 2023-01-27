@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LargestNumber</title>
+
+    <script>
+        function findLargest() {
+            var fn = parseInt(document.getElementById("fn").value);
+            var sn = parseInt(document.getElementById("sn").value);
+            var tn = parseInt(document.getElementById("tn").value);
+            max = 0;
+            if (isNaN(fn) || isNaN(sn) || isNaN(tn)) {
+                document.getElementById("mdiv").innerHTML = "Please Enter a valid Number";
+                return;
+            }
+            if (fn >= sn) {
+                if (fn > tn)
+                    max = fn;
+                else
+                    max = tn;
+            }
+            else {
+                if (sn > tn)
+                    max = sn;
+                else
+                    max = tn;
+            }
+            document.getElementById("mdiv").innerHTML = `<br>Max Number : ${max}`;
+            document.getElementById("fn").value = "";
+            document.getElementById("sn").value = "";
+            document.getElementById("tn").value = "";
+            document.getElementById("fn").focus();
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <h2>Find Largest Number</h2>
+    <form>
+        <table>
+            <tr>
+                <td>First Number : </td>
+                <td><input type="number" id="fn" name="fn" required autofocus></td>
+            </tr>
+            <tr>
+                <td>Second Number : </td>
+                <td><input type="number" id="sn" name="sn" required></td>
+            </tr>
+            <tr>
+                <td>Third Number : </td>
+                <td><input type="number" id="tn" name="tn" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><button type="button" id="btn" name="btn"
+                        onclick="findLargest()">Find Max</button></td>
+            </tr>
+        </table>
+    </form>
+    <div id="mdiv">
+
+    </div>
+</body>
+
+</html>

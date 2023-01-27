@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Calculator</title>
+    <style>
+        .tittle {
+            text-align: center;
+        }
+    </style>
+    <script src="bootstrap-4.6.2-dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#calulate').click(function () {
+                var principal = parseInt($('#principal').val())
+                var rate = parseFloat($('#rate').val())
+                var time = parseFloat($('#time').val())
+                if (isNaN(principal) || isNaN(rate) || isNaN(time)) {
+                    alert("Please Enter Valid Details");
+                    return;
+                }
+                if (principal > 1500000) {
+                    alert("Amount of Loan Should be Less than 15 Lakh");
+                    return;
+                }
+                if (time < 7 || time > 15) {
+                    alert("Repayment Time Should be Between 7 and 15");
+                    return;
+                }
+                rate = ((rate / 12) / 100);
+                var mul = Math.pow((1 + rate), (time * 12));
+                var emi = ((principal * rate * mul) / (mul - 1));
+                var amount = emi * time * 12;
+                $('#emi').val(parseFloat(emi).toFixed(2));
+                $('#amount').val(parseFloat(amount).toFixed(2));
+                $('#interest').val(parseFloat(amount - principal).toFixed(2));
+                $('#principal').focus();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <form>
+        <table style="margin: auto;border: 2px solid black;">
+            <tr>
+                <td colspan="2" class="tittle"><b>Enter Loan Information</b></td>
+            </tr>
+            <tr>
+                <td>1) Amount of the Loan(any Currency) :&nbsp</td>
+                <td><input type="text" id="principal" name="principal"></td>
+            </tr>
+            <tr>
+                <td>2) Annual Percantage Rate of Interest :&nbsp</td>
+                <td><input type="text" id="rate" name="rate"></td>
+            </tr>
+            <tr>
+                <td>3) Repayment period in Years :&nbsp</td>
+                <td><input type="text" id="time" name="time"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="tittle"><button type="button" id="calulate" name="calulate">Compute</button></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="tittle"><b>Payment Information</b></td>
+            </tr>
+            <tr>
+                <td>4) Your Monthly Payment will be :&nbsp</td>
+                <td><input type="text" id="emi" name="emi" readonly></td>
+            </tr>
+            <tr>
+                <td>5) Your Total Payment will Be :&nbsp</td>
+                <td><input type="text" id="amount" name="amount" readonly></td>
+            </tr>
+            <tr>
+                <td>6) Your Total Interest Payment Will Be :&nbsp</td>
+                <td><input type="text" id="interest" name="interest" readonly></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
