@@ -1,21 +1,19 @@
 package pojos;
 
-import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="address_tbl")
-public class Address{
-	
-	@EmbeddedId
-	@AttributeOverride(name = "id",column = @Column(name="student_id"))
-	private Long id;
-	
+public class Address extends BaseEntity{
+		
 	@OneToOne
+	@JoinColumn(name="student_id")
+	@MapsId //Primary Key Shared from Student 
 	private Student student; 
 	
 	private String city;
