@@ -1,1 +1,1 @@
-<img src="day9_lab/EMS with SpringBoot and Hibernate.png" />
+<img src="EMS with SpringBoot and Hibernate.png" />
